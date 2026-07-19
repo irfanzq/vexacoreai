@@ -313,7 +313,41 @@ a:hover {
   grid-template-columns: 1.05fr 0.95fr;
   gap: 2rem;
   align-items: center;
-  padding: 1rem 0 3rem;
+  padding: 1rem 0 2rem;
+}
+
+.trust-strip {
+  width: min(var(--max), calc(100% - 2.5rem));
+  margin: 0 auto 1.5rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.trust-strip p {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.4rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.trust-strip span {
+  position: relative;
+}
+
+.trust-strip span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -0.75rem;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-50%);
 }
 
 .hero-copy {
@@ -939,6 +973,13 @@ a:hover {
   font-weight: 400;
 }
 
+.privacy-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
 .form-fields {
   display: grid;
   gap: 1rem;
@@ -1177,10 +1218,15 @@ a:hover {
     background: var(--surface);
   }
 
+  .trust-strip span:not(:last-child)::after {
+    display: none;
+  }
+
   .hero,
   .contact-page,
   .section,
-  .site-footer {
+  .site-footer,
+  .trust-strip {
     width: min(var(--max), calc(100% - 2rem));
   }
 

@@ -421,11 +421,12 @@ function hasWeb3Key() {
   );
 }
 
-function openMailtoDraft({ name, email, interests, message }) {
+function openMailtoDraft({ name, email, business, interests, message }) {
   const subject = encodeURIComponent(`VexaCore inquiry from ${name}`);
   const body = encodeURIComponent(
     [
       `Name: ${name}`,
+      `Business: ${business || "Not provided"}`,
       `Email: ${email}`,
       `Interested in: ${interests || "Not specified"}`,
       "",
@@ -439,6 +440,7 @@ function readForm(formEl) {
   const data = new FormData(formEl);
   return {
     name: String(data.get("name") || "").trim(),
+    business: String(data.get("business") || "").trim(),
     email: String(data.get("email") || "").trim(),
     message: String(data.get("message") || "").trim(),
     interests: data
@@ -466,6 +468,7 @@ async function sendWithWeb3Forms(fields) {
         subject: `VexaCore inquiry from ${fields.name}`,
         from_name: "VexaCore website",
         name: fields.name,
+        business: fields.business || "Not provided",
         email: fields.email,
         interested_in: fields.interests || "Not specified",
         message: fields.message,
