@@ -328,6 +328,8 @@ const formFields = document.getElementById("form-fields");
 const formSuccess = document.getElementById("form-success");
 const sendAnotherBtn = document.getElementById("send-another");
 const statusEl = document.getElementById("form-status");
+const emailInput = document.getElementById("client-email");
+const emailError = document.getElementById("email-error");
 const submitBtn = form?.querySelector('button[type="submit"]');
 
 function setStatus(message, type = "") {
@@ -336,13 +338,66 @@ function setStatus(message, type = "") {
   statusEl.className = `form-status${type ? ` form-status--${type}` : ""}`;
 }
 
+function isValidEmail(value) {
+  // Practical email check: name@domain.tld
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value);
+}
+
+function setEmailError(message = "") {
+  if (!emailInput || !emailError) return;
+  if (message) {
+    emailError.hidden = false;
+    emailError.textContent = message;
+    emailInput.classList.add("is-invalid");
+    emailInput.setAttribute("aria-invalid", "true");
+  } else {
+    emailError.hidden = true;
+    emailError.textContent = "";
+    emailInput.classList.remove("is-invalid");
+    emailInput.removeAttribute("aria-invalid");
+  }
+}
+
+function validateEmailField({ showEmptyError = false } = {}) {
+  const value = String(emailInput?.value || "").trim();
+
+  if (!value) {
+    if (showEmptyError) {
+      setEmailError("Please enter your email address.");
+      return false;
+    }
+    setEmailError("");
+    return false;
+  }
+
+  if (!isValidEmail(value)) {
+    setEmailError("Please enter a valid email address (example: name@company.com).");
+    return false;
+  }
+
+  setEmailError("");
+  return true;
+}
+
+emailInput?.addEventListener("input", () => {
+  if (emailInput.classList.contains("is-invalid") || emailInput.value.trim()) {
+    validateEmailField({ showEmptyError: false });
+  }
+});
+
+emailInput?.addEventListener("blur", () => {
+  if (emailInput.value.trim()) {
+    validateEmailField({ showEmptyError: true });
+  }
+});
+
 function showSuccessState() {
   form?.reset();
+  setEmailError("");
   form?.classList.add("is-sent");
   if (formFields) formFields.hidden = true;
   if (formSuccess) {
     formSuccess.hidden = false;
-    formSuccess.focus?.();
   }
   setStatus("");
 }
@@ -352,6 +407,7 @@ function showFormState() {
   if (formSuccess) formSuccess.hidden = true;
   if (formFields) formFields.hidden = false;
   setStatus("");
+  setEmailError("");
 }
 
 sendAnotherBtn?.addEventListener("click", () => {
@@ -432,10 +488,21 @@ form?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const fields = readForm(form);
-  if (!fields.name || !fields.email || !fields.message) {
+  const emailOk = validateEmailField({ showEmptyError: true });
+
+  if (!fields.name || !fields.email || !fields.message || !emailOk) {
     form.classList.add("is-shake");
     window.setTimeout(() => form.classList.remove("is-shake"), 450);
-    form.reportValidity();
+    if (!emailOk) {
+      emailInput?.focus();
+      setStatus("Please fix the email address and try again.", "error");
+    } else if (!fields.name) {
+      form.querySelector('input[name="name"]')?.focus();
+      setStatus("Please enter your name.", "error");
+    } else if (!fields.message) {
+      form.querySelector('textarea[name="message"]')?.focus();
+      setStatus("Please describe your problem.", "error");
+    }
     return;
   }
 
