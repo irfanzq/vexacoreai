@@ -713,10 +713,12 @@ a:hover {
   content: "–";
 }
 
-.faq-item p {
-  margin: 0 0 1rem;
-  color: var(--muted);
-  max-width: 48ch;
+.faq-item .service-points {
+  margin: 0.75rem 0 1rem;
+}
+
+.faq-item p + .service-points {
+  margin-top: 0.65rem;
 }
 
 .contact-direct {
