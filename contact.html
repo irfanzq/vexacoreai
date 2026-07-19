@@ -45,7 +45,7 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
   <body>
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
@@ -103,8 +103,14 @@
             <input type="text" name="name" autocomplete="name" required />
           </label>
           <label>
-            Work email
-            <input type="email" name="email" autocomplete="email" required />
+            Your email (client)
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="client@company.com"
+            />
           </label>
           <fieldset>
             <legend>Interested in</legend>
@@ -141,6 +147,7 @@
           <button class="btn" type="submit">Send message</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           <p class="form-note">
+            Messages are delivered to
             <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>
             ·
             <a href="tel:+18328706646">+1 832 870 6646</a>
@@ -161,6 +168,6 @@
       <p class="fine">&copy; <span id="year"></span> VexaCore. All rights reserved.</p>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>

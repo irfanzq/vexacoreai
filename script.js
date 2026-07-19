@@ -319,7 +319,7 @@ function initFormPolish() {
 initFormPolish();
 
 /* ---------- Web3Forms ---------- */
-const WEB3FORMS_ACCESS_KEY = "ae5f3bdc-51a8-41d6-9f77-c8af7f30fe2d";
+const WEB3FORMS_ACCESS_KEY = "cc60a9c9-bcc3-4c77-a3a3-5483183ca55e";
 const CONTACT_EMAIL = "mailz4irfi@gmail.com";
 const SEND_TIMEOUT_MS = 8000;
 
