@@ -45,7 +45,7 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
@@ -97,61 +97,74 @@
         </div>
 
         <form class="contact-form" id="contact-form" novalidate>
-          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
-          <label>
-            Name
-            <input type="text" name="name" autocomplete="name" required />
-          </label>
-          <label>
-            Your email (client)
-            <input
-              type="email"
-              name="email"
-              autocomplete="email"
-              required
-              placeholder="client@company.com"
-            />
-          </label>
-          <fieldset>
-            <legend>Interested in</legend>
-            <label class="check">
+          <div class="form-fields" id="form-fields">
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+            <label>
+              Name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Your email (client)
               <input
-                type="checkbox"
-                name="interest"
-                value="Solve a business problem with AI"
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="client@company.com"
               />
-              Solve a business problem with AI
             </label>
-            <label class="check">
-              <input type="checkbox" name="interest" value="AWS onboarding for my apps" />
-              AWS onboarding for my apps
+            <fieldset>
+              <legend>Interested in</legend>
+              <label class="check">
+                <input
+                  type="checkbox"
+                  name="interest"
+                  value="Solve a business problem with AI"
+                />
+                Solve a business problem with AI
+              </label>
+              <label class="check">
+                <input type="checkbox" name="interest" value="AWS onboarding for my apps" />
+                AWS onboarding for my apps
+              </label>
+              <label class="check">
+                <input
+                  type="checkbox"
+                  name="interest"
+                  value="Managed AWS for my business apps"
+                />
+                Managed AWS for my business apps
+              </label>
+            </fieldset>
+            <label>
+              What’s the problem? (tell us in your own words)
+              <textarea
+                name="message"
+                rows="5"
+                required
+                placeholder="Example: Our team spends hours every week answering the same customer questions and updating spreadsheets by hand…"
+              ></textarea>
             </label>
-            <label class="check">
-              <input
-                type="checkbox"
-                name="interest"
-                value="Managed AWS for my business apps"
-              />
-              Managed AWS for my business apps
-            </label>
-          </fieldset>
-          <label>
-            What’s the problem? (tell us in your own words)
-            <textarea
-              name="message"
-              rows="5"
-              required
-              placeholder="Example: Our team spends hours every week answering the same customer questions and updating spreadsheets by hand…"
-            ></textarea>
-          </label>
-          <button class="btn" type="submit">Send message</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          <p class="form-note">
-            Messages are delivered to
-            <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>
-            ·
-            <a href="tel:+18328706646">+1 832 870 6646</a>
-          </p>
+            <button class="btn" type="submit">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-note">
+              Messages are delivered to
+              <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>
+              ·
+              <a href="tel:+18328706646">+1 832 870 6646</a>
+            </p>
+          </div>
+
+          <div class="form-success" id="form-success" hidden>
+            <p class="form-success-title">Message sent</p>
+            <p class="form-success-text">
+              Thanks — we got your message and will get back to you soon at the
+              email you provided.
+            </p>
+            <button class="btn" type="button" id="send-another">
+              Send another message
+            </button>
+          </div>
         </form>
       </section>
     </main>
@@ -168,6 +181,6 @@
       <p class="fine">&copy; <span id="year"></span> VexaCore. All rights reserved.</p>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
   </body>
 </html>

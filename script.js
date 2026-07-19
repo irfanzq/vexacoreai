@@ -324,6 +324,9 @@ const CONTACT_EMAIL = "mailz4irfi@gmail.com";
 const SEND_TIMEOUT_MS = 8000;
 
 const form = document.getElementById("contact-form");
+const formFields = document.getElementById("form-fields");
+const formSuccess = document.getElementById("form-success");
+const sendAnotherBtn = document.getElementById("send-another");
 const statusEl = document.getElementById("form-status");
 const submitBtn = form?.querySelector('button[type="submit"]');
 
@@ -332,6 +335,29 @@ function setStatus(message, type = "") {
   statusEl.textContent = message;
   statusEl.className = `form-status${type ? ` form-status--${type}` : ""}`;
 }
+
+function showSuccessState() {
+  form?.reset();
+  form?.classList.add("is-sent");
+  if (formFields) formFields.hidden = true;
+  if (formSuccess) {
+    formSuccess.hidden = false;
+    formSuccess.focus?.();
+  }
+  setStatus("");
+}
+
+function showFormState() {
+  form?.classList.remove("is-sent");
+  if (formSuccess) formSuccess.hidden = true;
+  if (formFields) formFields.hidden = false;
+  setStatus("");
+}
+
+sendAnotherBtn?.addEventListener("click", () => {
+  showFormState();
+  form?.querySelector('input[name="name"]')?.focus();
+});
 
 function hasWeb3Key() {
   return Boolean(
@@ -428,10 +454,7 @@ form?.addEventListener("submit", async (event) => {
 
   try {
     await sendWithWeb3Forms(fields);
-    form.reset();
-    form.classList.add("is-success-pop");
-    window.setTimeout(() => form.classList.remove("is-success-pop"), 700);
-    setStatus("Thanks — your message was sent. We’ll get back to you soon.", "success");
+    showSuccessState();
   } catch {
     setStatus("Network is slow — opening an email draft instead…");
     openMailtoDraft(fields);
