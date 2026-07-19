@@ -8,6 +8,23 @@
       name="description"
       content="VexaCore builds AI agent software and handles AWS onboarding plus monthly managed cloud operations for growing businesses."
     />
+    <meta name="theme-color" content="#0a5240" />
+    <link rel="canonical" href="https://vexacore.ai/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vexacore.ai/" />
+    <meta property="og:title" content="VexaCore — AI agents & managed AWS" />
+    <meta
+      property="og:description"
+      content="AI agent software, AWS onboarding, and monthly managed cloud operations for growing businesses."
+    />
+    <meta property="og:site_name" content="VexaCore" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VexaCore — AI agents & managed AWS" />
+    <meta
+      name="twitter:description"
+      content="AI agent software, AWS onboarding, and monthly managed cloud operations for growing businesses."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,16 +32,28 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "VexaCore",
+        "url": "https://vexacore.ai",
+        "email": "mailz4irfi@gmail.com",
+        "telephone": "+1-832-870-6646",
+        "description": "AI agent software, AWS onboarding, and managed AWS operations for businesses."
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="VexaCore home">VexaCore</a>
       <nav class="nav" aria-label="Primary">
         <a href="#services">Services</a>
-        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a class="btn btn-small" href="mailto:mailz4irfi@gmail.com">Email us</a>
+      <a class="btn btn-small" href="contact.html">Get started</a>
     </header>
 
     <main>
@@ -37,11 +66,12 @@
             your AWS environment on a monthly subscription.
           </p>
           <div class="cta-row">
-            <a class="btn" href="mailto:mailz4irfi@gmail.com">Email us</a>
-            <a class="btn btn-ghost" href="tel:+18328706646">Call +1 832 870 6646</a>
+            <a class="btn" href="contact.html">Talk to us</a>
+            <a class="btn btn-ghost" href="tel:+18328706646">+1 832 870 6646</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
+          <div class="hero-grain"></div>
           <div class="orbit">
             <span class="node node-a"></span>
             <span class="node node-b"></span>
@@ -71,8 +101,30 @@
         </div>
       </section>
 
-      <section class="section" id="services">
-        <div class="section-head">
+      <section class="section" id="about">
+        <div class="section-head reveal">
+          <h2>Built for teams that need results, not more tools</h2>
+          <p>
+            VexaCore helps growing businesses automate work with AI agents and
+            run AWS without hiring a full cloud team.
+          </p>
+        </div>
+        <div class="audience reveal">
+          <p>
+            <strong>Who it’s for</strong>
+            Founders, ops leads, and product teams that want automation and a
+            stable AWS setup — without becoming an infrastructure company.
+          </p>
+          <p>
+            <strong>What you get</strong>
+            Clear delivery, practical setup, and optional monthly operations so
+            nothing drifts after launch.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="services">
+        <div class="section-head reveal">
           <h2>What we run for you</h2>
           <p>
             Three connected offerings — software, launch, and ongoing operations.
@@ -80,7 +132,7 @@
         </div>
 
         <div class="service-list">
-          <article class="service">
+          <article class="service reveal">
             <p class="service-index">01</p>
             <div>
               <h3>AI agents SaaS</h3>
@@ -89,9 +141,14 @@
                 operations, and internal tools — built to plug into how your
                 business already works.
               </p>
+              <ul class="service-points">
+                <li>Workflow automation for support and ops</li>
+                <li>Integrations with the tools you already use</li>
+                <li>Iterated with you after the first live workflows</li>
+              </ul>
             </div>
           </article>
-          <article class="service">
+          <article class="service reveal">
             <p class="service-index">02</p>
             <div>
               <h3>AWS onboarding</h3>
@@ -100,9 +157,14 @@
                 networking, security baselines, environments, and the paths
                 your team needs to ship safely.
               </p>
+              <ul class="service-points">
+                <li>Account structure and access setup</li>
+                <li>Networking, security baselines, and environments</li>
+                <li>Handoff docs your team can actually use</li>
+              </ul>
             </div>
           </article>
-          <article class="service">
+          <article class="service reveal">
             <p class="service-index">03</p>
             <div>
               <h3>Managed AWS, monthly</h3>
@@ -111,33 +173,123 @@
                 updates, and day-to-day AWS care so your team can focus on the
                 product, not the plumbing.
               </p>
+              <ul class="service-points">
+                <li>Monitoring, alerts, and routine maintenance</li>
+                <li>Cost watch and monthly health check-ins</li>
+                <li>A steady contact for AWS changes as you grow</li>
+              </ul>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section section-alt" id="how">
-        <div class="section-head">
+      <section class="section" id="how">
+        <div class="section-head reveal">
           <h2>How engagement works</h2>
           <p>Simple start. Clear ownership. Ongoing partnership.</p>
         </div>
         <ol class="steps">
-          <li>
+          <li class="reveal">
             <strong>Scope</strong>
             <span>Tell us about your workload, tools, and AWS needs.</span>
           </li>
-          <li>
+          <li class="reveal">
             <strong>Stand up</strong>
             <span>We deliver agents and/or your AWS onboarding plan.</span>
           </li>
-          <li>
+          <li class="reveal">
             <strong>Operate</strong>
             <span>Stay on a monthly managed plan as you grow.</span>
           </li>
         </ol>
       </section>
 
-      <section class="section cta-band">
+      <section class="section section-alt" id="pricing">
+        <div class="section-head reveal">
+          <h2>Starting packages</h2>
+          <p>
+            Typical starting points. Final pricing depends on scope — we’ll
+            confirm after a short conversation.
+          </p>
+        </div>
+        <div class="pricing-list">
+          <article class="price-row reveal">
+            <div>
+              <h3>AI agents SaaS</h3>
+              <p>Live agent workflows with setup and iteration support.</p>
+            </div>
+            <p class="price"><span>From</span> $499<span>/mo</span></p>
+          </article>
+          <article class="price-row reveal">
+            <div>
+              <h3>AWS onboarding</h3>
+              <p>One-time foundation build so your team can ship on AWS safely.</p>
+            </div>
+            <p class="price"><span>From</span> $2,500</p>
+          </article>
+          <article class="price-row reveal">
+            <div>
+              <h3>Managed AWS</h3>
+              <p>Monthly operations, monitoring, and cloud care on subscription.</p>
+            </div>
+            <p class="price"><span>From</span> $999<span>/mo</span></p>
+          </article>
+        </div>
+        <p class="pricing-note reveal">
+          Need a mix of agents + AWS? Ask for a combined plan.
+          <a href="contact.html">Request a quote</a>
+        </p>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-head reveal">
+          <h2>Questions, answered</h2>
+          <p>Quick answers before you reach out.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>Do I need all three services?</summary>
+            <p>
+              No. Start with AI agents, AWS onboarding, or managed AWS alone —
+              or combine them if you want one team for software and cloud.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How fast can we start?</summary>
+            <p>
+              Most engagements begin with a short scoping call. Simple agent or
+              AWS onboarding work can often kick off within days after we agree
+              on scope.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Is pricing fixed?</summary>
+            <p>
+              The numbers above are starting points. Workloads vary — we’ll give
+              you a clear quote before anything begins.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do you work with startups and established teams?</summary>
+            <p>
+              Yes. If you need practical automation and a clean AWS setup without
+              building a large platform team, you’re in range.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How do I get in touch?</summary>
+            <p>
+              Use the
+              <a href="contact.html">contact form</a>, email
+              <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>, or
+              call
+              <a href="tel:+18328706646">+1 832 870 6646</a>.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section cta-band reveal">
         <h2>Ready to talk?</h2>
         <p>
           Email

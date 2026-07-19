@@ -1,7 +1,31 @@
 document.getElementById("year")?.append(String(new Date().getFullYear()));
 
-// Optional: when you have decent Wi‑Fi, get a free key at https://web3forms.com
-// (use mailz4irfi@gmail.com), then paste it here. Until then, submit opens an email draft.
+const header = document.querySelector(".site-header");
+const onScrollHeader = () => {
+  if (!header) return;
+  header.classList.toggle("is-scrolled", window.scrollY > 8);
+};
+onScrollHeader();
+window.addEventListener("scroll", onScrollHeader, { passive: true });
+
+const revealItems = document.querySelectorAll(".reveal");
+if (revealItems.length && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+  );
+  revealItems.forEach((item) => observer.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
 const WEB3FORMS_ACCESS_KEY = "ae5f3bdc-51a8-41d6-9f77-c8af7f30fe2d";
 
 const CONTACT_EMAIL = "mailz4irfi@gmail.com";
@@ -95,7 +119,6 @@ form?.addEventListener("submit", async (event) => {
     return;
   }
 
-  // No key yet, or offline/slow plane Wi‑Fi: open email draft instead.
   if (!hasWeb3Key() || !navigator.onLine) {
     setStatus("Opening your email app with a draft…");
     openMailtoDraft(fields);
