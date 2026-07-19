@@ -2,27 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>VexaCore — AI agents & managed AWS for business</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#f8fafc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0f172a"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>VexaCore — Solve business problems with AI & managed AWS</title>
     <meta
       name="description"
-      content="VexaCore builds AI agent software and handles AWS onboarding plus monthly managed cloud operations for growing businesses."
+      content="Tell us your business problem — VexaCore solves it with cutting-edge AI tools and AI agents. Plus AWS onboarding and managed cloud operations."
     />
-    <meta name="theme-color" content="#0a5240" />
     <link rel="canonical" href="https://vexacore.ai/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vexacore.ai/" />
-    <meta property="og:title" content="VexaCore — AI agents & managed AWS" />
+    <meta
+      property="og:title"
+      content="VexaCore — Solve business problems with AI"
+    />
     <meta
       property="og:description"
-      content="AI agent software, AWS onboarding, and monthly managed cloud operations for growing businesses."
+      content="Just tell us your problem. We solve it with cutting-edge AI tools — plus AWS onboarding and managed cloud ops."
     />
     <meta property="og:site_name" content="VexaCore" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="VexaCore — AI agents & managed AWS" />
+    <meta
+      name="twitter:title"
+      content="VexaCore — Solve business problems with AI"
+    />
     <meta
       name="twitter:description"
-      content="AI agent software, AWS onboarding, and monthly managed cloud operations for growing businesses."
+      content="Just tell us your problem. We solve it with cutting-edge AI tools — plus AWS onboarding and managed cloud ops."
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,39 +65,59 @@
         "url": "https://vexacore.ai",
         "email": "mailz4irfi@gmail.com",
         "telephone": "+1-832-870-6646",
-        "description": "AI agent software, AWS onboarding, and managed AWS operations for businesses."
+        "description": "Tell us your business problem — VexaCore solves it with cutting-edge AI tools and AI agents, plus AWS onboarding and managed cloud operations."
       }
     </script>
   </head>
   <body>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="VexaCore home">VexaCore</a>
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="#services">Services</a>
+        <a href="#agents">AI agents</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a class="btn btn-small" href="contact.html">Get started</a>
+      <div class="header-actions">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="btn btn-small header-cta" href="contact.html">Get started</a>
+      </div>
     </header>
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
 
     <main>
       <section class="hero" aria-label="Introduction">
         <div class="hero-copy">
           <p class="brand-mark">VexaCore</p>
-          <h1>AI that works. Cloud that stays managed.</h1>
+          <h1>Tell us your problem. We’ll solve it with AI.</h1>
           <p class="lede">
-            We ship AI agent software for your business — and onboard plus run
-            your AWS environment on a monthly subscription.
+            We use cutting-edge AI tools to fix real business problems — so you
+            don’t need to learn the tech. We also onboard and manage your
+            business applications on AWS so they run smoothly, stay highly
+            available, and keep your data secure with integrity.
           </p>
           <div class="cta-row">
-            <a class="btn" href="contact.html">Talk to us</a>
+            <a class="btn" href="contact.html">Tell us your problem</a>
             <a class="btn btn-ghost" href="tel:+18328706646">+1 832 870 6646</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
+          <canvas class="hero-canvas" id="hero-canvas"></canvas>
+          <div class="hero-spotlight" id="hero-spotlight"></div>
           <div class="hero-grain"></div>
-          <div class="orbit">
+          <div class="orbit" id="hero-orbit">
             <span class="node node-a"></span>
             <span class="node node-b"></span>
             <span class="node node-c"></span>
@@ -103,31 +148,60 @@
 
       <section class="section" id="about">
         <div class="section-head reveal">
-          <h2>Built for teams that need results, not more tools</h2>
+          <h2>You bring the problem. We bring the AI.</h2>
           <p>
-            VexaCore helps growing businesses automate work with AI agents and
-            run AWS without hiring a full cloud team.
+            Most businesses don’t need to become AI experts. You already know
+            what’s slow, expensive, or messy in your operations — we turn that
+            into a working AI solution.
           </p>
         </div>
         <div class="audience reveal">
           <p>
-            <strong>Who it’s for</strong>
-            Founders, ops leads, and product teams that want automation and a
-            stable AWS setup — without becoming an infrastructure company.
+            <strong>Just tell us</strong>
+            What’s costing you time, money, or customers? Support overload,
+            repetitive admin, slow follow-ups, messy handoffs — anything your
+            team keeps struggling with.
           </p>
           <p>
-            <strong>What you get</strong>
-            Clear delivery, practical setup, and optional monthly operations so
-            nothing drifts after launch.
+            <strong>We handle the AI</strong>
+            We design and build the AI tools (including AI agents) that do the
+            work for you — explained in plain language, delivered as a clear
+            result.
           </p>
         </div>
       </section>
 
-      <section class="section section-alt" id="services">
+      <section class="section section-alt" id="agents">
+        <div class="section-head reveal">
+          <h2>What is an AI agent? (in plain English)</h2>
+          <p>
+            An AI agent is software that can take a goal, use your tools and
+            data, and complete steps on its own — more than a chatbot that only
+            answers questions.
+          </p>
+        </div>
+        <div class="audience reveal">
+          <p>
+            <strong>Simple example</strong>
+            Instead of only drafting an email reply, an agent can read the
+            request, check your systems, update a record, and follow up —
+            following rules you approve.
+          </p>
+          <p>
+            <strong>Why it matters</strong>
+            You don’t need to know how agents work. Tell us the business
+            problem; we choose the right AI approach and build it so your team
+            gets the outcome.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="services">
         <div class="section-head reveal">
           <h2>What we run for you</h2>
           <p>
-            Three connected offerings — software, launch, and ongoing operations.
+            AI problem-solving first — plus AWS when your business apps need to
+            run reliably in the cloud.
           </p>
         </div>
 
@@ -135,31 +209,32 @@
           <article class="service reveal">
             <p class="service-index">01</p>
             <div>
-              <h3>AI agents SaaS</h3>
+              <h3>Solve business problems with AI</h3>
               <p>
-                Productized AI agents that automate workflows across support,
-                operations, and internal tools — built to plug into how your
-                business already works.
+                Tell us what’s broken or slow in your business. We use
+                cutting-edge AI tools and AI agents to automate the work, cut
+                busywork, and improve how your team operates — without you
+                needing an AI background.
               </p>
               <ul class="service-points">
-                <li>Workflow automation for support and ops</li>
-                <li>Integrations with the tools you already use</li>
-                <li>Iterated with you after the first live workflows</li>
+                <li>You describe the problem in normal business language</li>
+                <li>We design the AI solution (agents, tools, workflows)</li>
+                <li>You get a working system, not a tech lecture</li>
               </ul>
             </div>
           </article>
           <article class="service reveal">
             <p class="service-index">02</p>
             <div>
-              <h3>AWS onboarding</h3>
+              <h3>AWS onboarding for your apps</h3>
               <p>
-                We stand up a clean AWS foundation for your company: accounts,
-                networking, security baselines, environments, and the paths
-                your team needs to ship safely.
+                We get your business applications set up on AWS the right way —
+                accounts, networking, security baselines, and environments —
+                so you can run with confidence from day one.
               </p>
               <ul class="service-points">
-                <li>Account structure and access setup</li>
-                <li>Networking, security baselines, and environments</li>
+                <li>Move or launch your apps onto AWS cleanly</li>
+                <li>Security baselines and access set up properly</li>
                 <li>Handoff docs your team can actually use</li>
               </ul>
             </div>
@@ -167,44 +242,54 @@
           <article class="service reveal">
             <p class="service-index">03</p>
             <div>
-              <h3>Managed AWS, monthly</h3>
+              <h3>Managed AWS for business apps</h3>
               <p>
-                Subscription-based cloud operations — monitoring, cost control,
-                updates, and day-to-day AWS care so your team can focus on the
-                product, not the plumbing.
+                We run and watch your AWS-hosted applications every month —
+                for smooth operations, high availability, secure data, and
+                integrity — so your team can focus on the business, not the
+                cloud.
               </p>
               <ul class="service-points">
-                <li>Monitoring, alerts, and routine maintenance</li>
-                <li>Cost watch and monthly health check-ins</li>
-                <li>A steady contact for AWS changes as you grow</li>
+                <li>Monitoring and high-availability care</li>
+                <li>Security, data integrity, and cost watch</li>
+                <li>A steady contact when something needs to change</li>
               </ul>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section" id="how">
+      <section class="section section-alt" id="how">
         <div class="section-head reveal">
           <h2>How engagement works</h2>
           <p>Simple start. Clear ownership. Ongoing partnership.</p>
         </div>
         <ol class="steps">
           <li class="reveal">
-            <strong>Scope</strong>
-            <span>Tell us about your workload, tools, and AWS needs.</span>
+            <strong>Tell us the problem</strong>
+            <span
+              >Share what’s slowing your business — no technical jargon
+              needed.</span
+            >
           </li>
           <li class="reveal">
-            <strong>Stand up</strong>
-            <span>We deliver agents and/or your AWS onboarding plan.</span>
+            <strong>We build the AI</strong>
+            <span
+              >We design and deliver the AI tools/agents — and, if you need it,
+              get your apps running smoothly on AWS.</span
+            >
           </li>
           <li class="reveal">
-            <strong>Operate</strong>
-            <span>Stay on a monthly managed plan as you grow.</span>
+            <strong>You get results</strong>
+            <span
+              >Working AI solutions, plus optional monthly AWS care for
+              availability, security, and smooth ops.</span
+            >
           </li>
         </ol>
       </section>
 
-      <section class="section section-alt" id="pricing">
+      <section class="section" id="pricing">
         <div class="section-head reveal">
           <h2>Starting packages</h2>
           <p>
@@ -214,29 +299,32 @@
         </div>
         <div class="pricing-list">
           <article class="price-row reveal">
-            <div>
-              <h3>AI agents SaaS</h3>
-              <p>Live agent workflows with setup and iteration support.</p>
-            </div>
+          <div>
+            <h3>AI problem-solving</h3>
+            <p>Typical starting point after we scope your business problem.</p>
+          </div>
             <p class="price"><span>From</span> $499<span>/mo</span></p>
           </article>
           <article class="price-row reveal">
             <div>
               <h3>AWS onboarding</h3>
-              <p>One-time foundation build so your team can ship on AWS safely.</p>
+              <p>Get your business applications onto AWS, set up the right way.</p>
             </div>
             <p class="price"><span>From</span> $2,500</p>
           </article>
           <article class="price-row reveal">
             <div>
               <h3>Managed AWS</h3>
-              <p>Monthly operations, monitoring, and cloud care on subscription.</p>
+              <p>
+                Monthly care for apps on AWS — availability, security, and smooth
+                operations.
+              </p>
             </div>
             <p class="price"><span>From</span> $999<span>/mo</span></p>
           </article>
         </div>
         <p class="pricing-note reveal">
-          Need a mix of agents + AWS? Ask for a combined plan.
+          Need AI plus AWS? Ask for a combined plan.
           <a href="contact.html">Request a quote</a>
         </p>
       </section>
@@ -244,36 +332,55 @@
       <section class="section" id="faq">
         <div class="section-head reveal">
           <h2>Questions, answered</h2>
-          <p>Quick answers before you reach out.</p>
+          <p>Especially if you’re new to AI agents — start here.</p>
         </div>
         <div class="faq-list">
-          <details class="faq-item reveal">
-            <summary>Do I need all three services?</summary>
+          <details class="faq-item reveal" open>
+            <summary>What is an AI agent?</summary>
             <p>
-              No. Start with AI agents, AWS onboarding, or managed AWS alone —
-              or combine them if you want one team for software and cloud.
+              An AI agent is software that can pursue a goal step by step — using
+              your tools, data, and rules — instead of only chatting. Think of it
+              as a digital worker that can complete tasks, not just answer
+              questions.
             </p>
           </details>
           <details class="faq-item reveal">
-            <summary>How fast can we start?</summary>
+            <summary>Do I need to understand AI to work with you?</summary>
             <p>
-              Most engagements begin with a short scoping call. Simple agent or
-              AWS onboarding work can often kick off within days after we agree
-              on scope.
+              No. Just tell us the business problem. We handle the AI design,
+              tools, and setup — and explain what you’ll get in plain language.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>What kinds of problems can AI solve?</summary>
+            <p>
+              Common ones include customer support overload, repetitive data
+              entry, slow lead follow-up, internal reporting, scheduling chaos,
+              and process handoffs between teams. If it’s repetitive or
+              rule-based, AI is often a strong fit.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How do we start?</summary>
+            <p>
+              Tell us your problem on the
+              <a href="contact.html">contact form</a>, by email, or by phone. We’ll
+              suggest an AI approach and a clear next step.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do I need all three services?</summary>
+            <p>
+              No. Start with AI problem-solving alone, or add AWS onboarding /
+              managed AWS if your business apps need to run on the cloud with
+              high availability and strong security.
             </p>
           </details>
           <details class="faq-item reveal">
             <summary>Is pricing fixed?</summary>
             <p>
-              The numbers above are starting points. Workloads vary — we’ll give
+              The numbers above are starting points. Scope varies — we’ll give
               you a clear quote before anything begins.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>Do you work with startups and established teams?</summary>
-            <p>
-              Yes. If you need practical automation and a clean AWS setup without
-              building a large platform team, you’re in range.
             </p>
           </details>
           <details class="faq-item reveal">
@@ -290,15 +397,14 @@
       </section>
 
       <section class="section cta-band reveal">
-        <h2>Ready to talk?</h2>
+        <h2>Got a business problem?</h2>
         <p>
-          Email
+          Tell us what it is — we’ll solve it with cutting-edge AI tools. Email
           <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>
           or call
-          <a href="tel:+18328706646">+1 832 870 6646</a>
-          — we’ll reply with next steps.
+          <a href="tel:+18328706646">+1 832 870 6646</a>.
         </p>
-        <a class="btn" href="contact.html">Go to contact</a>
+        <a class="btn" href="contact.html">Tell us your problem</a>
       </section>
     </main>
 

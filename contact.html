@@ -2,13 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#f8fafc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0f172a"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <title>Contact — VexaCore</title>
     <meta
       name="description"
-      content="Contact VexaCore about AI agents, AWS onboarding, or managed AWS operations."
+      content="Tell us your business problem — VexaCore solves it with cutting-edge AI tools. AWS onboarding and managed cloud available too."
     />
-    <meta name="theme-color" content="#0a5240" />
     <link rel="canonical" href="https://vexacore.ai/contact.html" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vexacore.ai/contact.html" />
@@ -29,30 +48,52 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <header class="site-header">
       <a class="logo" href="index.html" aria-label="VexaCore home">VexaCore</a>
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="index.html#services">Services</a>
+        <a href="index.html#agents">AI agents</a>
         <a href="index.html#pricing">Pricing</a>
         <a href="index.html#faq">FAQ</a>
         <a href="contact.html" aria-current="page">Contact</a>
       </nav>
-      <a class="btn btn-small" href="mailto:mailz4irfi@gmail.com">Email us</a>
+      <div class="header-actions">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="btn btn-small header-cta" href="mailto:mailz4irfi@gmail.com"
+          >Email us</a
+        >
+      </div>
     </header>
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
 
     <main>
       <section class="contact-page">
         <div class="contact-intro">
           <p class="brand-mark">VexaCore</p>
-          <h1>Let’s talk about agents or AWS.</h1>
+          <h1>Tell us your problem.</h1>
           <p class="lede">
-            Tell us what you need — AI agents, AWS onboarding, or monthly
-            managed cloud ops.
+            We’ll solve it with cutting-edge AI tools — you don’t need to know
+            what an AI agent is. Describe the business issue; we handle the tech.
+            We can also onboard and manage your business applications on AWS for
+            smooth operations, high availability, and secure data integrity.
           </p>
-          <p class="contact-direct">
-            <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a><br />
-            <a href="tel:+18328706646">+1 832 870 6646</a>
-          </p>
+          <div class="contact-chips">
+            <a class="contact-chip" href="mailto:mailz4irfi@gmail.com"
+              >mailz4irfi@gmail.com</a
+            >
+            <a class="contact-chip" href="tel:+18328706646">+1 832 870 6646</a>
+          </div>
         </div>
 
         <form class="contact-form" id="contact-form" novalidate>
@@ -68,25 +109,34 @@
           <fieldset>
             <legend>Interested in</legend>
             <label class="check">
-              <input type="checkbox" name="interest" value="AI agents SaaS" />
-              AI agents SaaS
+              <input
+                type="checkbox"
+                name="interest"
+                value="Solve a business problem with AI"
+              />
+              Solve a business problem with AI
             </label>
             <label class="check">
-              <input type="checkbox" name="interest" value="AWS onboarding" />
-              AWS onboarding
+              <input type="checkbox" name="interest" value="AWS onboarding for my apps" />
+              AWS onboarding for my apps
             </label>
             <label class="check">
               <input
                 type="checkbox"
                 name="interest"
-                value="Managed AWS monthly"
+                value="Managed AWS for my business apps"
               />
-              Managed AWS monthly
+              Managed AWS for my business apps
             </label>
           </fieldset>
           <label>
-            Message
-            <textarea name="message" rows="5" required></textarea>
+            What’s the problem? (tell us in your own words)
+            <textarea
+              name="message"
+              rows="5"
+              required
+              placeholder="Example: Our team spends hours every week answering the same customer questions and updating spreadsheets by hand…"
+            ></textarea>
           </label>
           <button class="btn" type="submit">Send message</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
