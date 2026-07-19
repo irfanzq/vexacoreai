@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — VexaCore</title>
+    <meta
+      name="description"
+      content="Contact VexaCore about AI agents, AWS onboarding, or managed AWS operations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="VexaCore home">VexaCore</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#how">How it works</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <a class="btn btn-small" href="mailto:mailz4irfi@gmail.com">Email us</a>
+    </header>
+
+    <main>
+      <section class="contact-page">
+        <div class="contact-intro">
+          <p class="brand-mark">VexaCore</p>
+          <h1>Let’s talk about agents or AWS.</h1>
+          <p class="lede">
+            Tell us what you need — AI agents, AWS onboarding, or monthly
+            managed cloud ops. Email
+            <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>
+            or call
+            <a href="tel:+18328706646">+1 832 870 6646</a>.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            Work email
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <fieldset>
+            <legend>Interested in</legend>
+            <label class="check">
+              <input type="checkbox" name="interest" value="AI agents SaaS" />
+              AI agents SaaS
+            </label>
+            <label class="check">
+              <input type="checkbox" name="interest" value="AWS onboarding" />
+              AWS onboarding
+            </label>
+            <label class="check">
+              <input
+                type="checkbox"
+                name="interest"
+                value="Managed AWS monthly"
+              />
+              Managed AWS monthly
+            </label>
+          </fieldset>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-note">
+            <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>
+            ·
+            <a href="tel:+18328706646">+1 832 870 6646</a>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="logo">VexaCore</p>
+      <p>
+        <a href="mailto:mailz4irfi@gmail.com">mailz4irfi@gmail.com</a>
+        ·
+        <a href="tel:+18328706646">+1 832 870 6646</a>
+        ·
+        <a href="index.html">Home</a>
+      </p>
+      <p class="fine">&copy; <span id="year"></span> VexaCore. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
